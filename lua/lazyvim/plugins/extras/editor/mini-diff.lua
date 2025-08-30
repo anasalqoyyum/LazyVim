@@ -7,7 +7,7 @@ return {
 
   -- setup mini.diff
   {
-    "echasnovski/mini.diff",
+    "nvim-mini/mini.diff",
     event = "VeryLazy",
     keys = {
       {
@@ -63,11 +63,11 @@ return {
           comp.source = function()
             local summary = vim.b.minidiff_summary
             return summary
-              and {
-                added = summary.add,
-                modified = summary.change,
-                removed = summary.delete,
-              }
+                and {
+                  added = summary.add,
+                  modified = summary.change,
+                  removed = summary.delete,
+                }
           end
           break
         end

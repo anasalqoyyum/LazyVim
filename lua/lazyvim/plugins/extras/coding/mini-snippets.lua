@@ -4,14 +4,14 @@ if lazyvim_docs then
   vim.g.lazyvim_mini_snippets_in_completion = true
 
   -- NOTE: Please also read:
-  -- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-snippets.md#expand
+  -- https://github.com/nvim-mini/mini.nvim/blob/main/readmes/mini-snippets.md#expand
   -- :h MiniSnippets-session
 
   -- Example override for your own config:
   --[[
   return {
     {
-      "echasnovski/mini.snippets",
+      "nvim-mini/mini.snippets",
       opts = function(_, opts)
         -- By default, for opts.snippets, the extra for mini.snippets only adds gen_loader.from_lang()
         -- This provides a sensible quickstart, integrating with friendly-snippets
@@ -36,7 +36,7 @@ if lazyvim_docs then
 end
 
 local include_in_completion = vim.g.lazyvim_mini_snippets_in_completion == nil
-  or vim.g.lazyvim_mini_snippets_in_completion
+    or vim.g.lazyvim_mini_snippets_in_completion
 
 local function expand_from_lsp(snippet)
   local insert = MiniSnippets.config.expand.insert or MiniSnippets.default_insert
@@ -58,12 +58,12 @@ return {
   -- disable builtin snippet support:
   { "garymjr/nvim-snippets", optional = true, enabled = false },
   -- disable luasnip:
-  { "L3MON4D3/LuaSnip", optional = true, enabled = false },
+  { "L3MON4D3/LuaSnip",      optional = true, enabled = false },
 
   -- add mini.snippets
   desc = "Manage and expand snippets (alternative to Luasnip)",
   {
-    "echasnovski/mini.snippets",
+    "nvim-mini/mini.snippets",
     event = "InsertEnter", -- don't depend on other plugins to load...
     dependencies = "rafamadriz/friendly-snippets",
     opts = function()
